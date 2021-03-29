@@ -22,11 +22,11 @@ public class RegexPincode{
 		
 		if(length == 6)
 		{
-		System.out.println("PINCODE is 6 digit long");
-		char result=input.charAt(0);
-		System.out.println("PINCODE starts with :"+result);
+		
+		char result=input.charAt(length-1);
+		System.out.println("PINCODE ends with :"+result);
 		//Converting char to string
-		String firstdigit=Character.toString(result);
+		String lastdigit=Character.toString(result);
 		
 		//Pattern for Special Characters
 		
@@ -35,19 +35,19 @@ public class RegexPincode{
 		//Pattern for alphabets
 		String alphabets = "[a-zA-Z]";
 		
-		if(firstdigit.matches(specialCharacters))
+		if(lastdigit.matches(specialCharacters))
 		{
-			System.out.println("PINCODE should not start with a special character - INVALID PINCODE");
+			System.out.println("PINCODE should not end with a special character - INVALID PINCODE");
 			
 		}
-		else if (firstdigit.matches(alphabets))
+		else if (lastdigit.matches(alphabets))
 		{
-			System.out.println("PINCODE should not start with a alphabet - INVALID PINCODE");
+			System.out.println("PINCODE should not end with a alphabet - INVALID PINCODE");
 			
 		}
 		else
 		{
-			System.out.println("PINCODE starts with a digit - VALID PINCODE");
+			System.out.println("PINCODE ends with a digit - VALID PINCODE");
 		}
 		
 		}
